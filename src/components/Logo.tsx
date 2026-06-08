@@ -2,18 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../assets/JacobLogo.png';
 
-const Logo = () => {
-  return (
-    <div className='justifyCenter'>
-      <Link to="/">
-        <img
-          src={logo}
-          alt="Logo"
-          style={{ width: '18rem', height: '15rem', cursor: 'pointer' }}
-        />
-      </Link>
-    </div>
-  );
-};
+const Logo: React.FC = () => (
+  <div className="justifyCenter">
+    <Link to="/" className="logo-link">
+      <img src={logo} alt="Jacob Skate Co." />
+    </Link>
+  </div>
+);
 
 export default Logo;

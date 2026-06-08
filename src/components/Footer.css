@@ -1,31 +1,51 @@
-/* Footer.css */
-
-/* Style for the parent container */
+/* ── FOOTER ── */
 .footer {
-    display: flex;
-    flex-direction: column;
-    min-height: auto; /* Remove the minimum height */
-    justify-content: flex-end; /* Push the footer content to the bottom */
-    align-items: center; /* Center horizontally */
-    background-color: transparent; /* Keep the background transparent */
-    color: white; /* Add your preferred text color */
-    padding: 5px 0; /* Adjust the vertical padding to make the footer shorter */
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+  padding: 3rem 2rem 2rem;
+  color: var(--muted);
 }
-
-/* Style for the footer content */
 .footer-container {
-    text-align: center;
-    margin-top: 0; /* Remove the top margin */
-    margin-bottom: 5px; /* Reduce the bottom margin */
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 2.5rem;
 }
-
-/* Style for the footer bottom */
+.footer-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.footer-section a {
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  transition: color 0.2s;
+  text-decoration: none;
+}
+.footer-section a:hover { color: var(--text); }
 .footer-bottom {
-    text-align: center;
-    margin-top: 5px; /* Reduce the top margin */
-    padding: 0; /* Remove the padding from the bottom part */
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  color: rgba(255,255,255,0.18);
 }
-
-.smaller-text {
-    color: #333; /* Updated text color for better visibility */
-  }
+.footer-brand {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  letter-spacing: 0.12em;
+  color: var(--text);
+  opacity: 0.2;
+}
+@media (max-width: 640px) {
+  .footer-container { grid-template-columns: 1fr 1fr; }
+}

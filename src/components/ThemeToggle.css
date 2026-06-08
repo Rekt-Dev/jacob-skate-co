@@ -1,18 +1,1 @@
-/* ThemeToggle.css */
-.theme-toggle-button {
-    background-color: #333;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
-  }
-  
-  .theme-toggle-button.light {
-    background-color: #fff;
-    color: #333;
-  }
-  
-  /* Add any other styles for your dark and light themes here */
-  
+/* ThemeToggle handled by ThemeStyles.css .theme-toggle-button rule */

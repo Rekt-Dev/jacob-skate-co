@@ -1,18 +1,98 @@
-/* styles.css */
-.hoverable-image {
-    /* Your default image styles here */
-    border: 0px solid #ccc;
-    margin: 10px;
-    /* Add any other styles you want for the default state */
-  
-    transition: all 0.2s ease; /* Transition all properties on hover */
-  }
-  
-  .hoverable-image:hover {
-    /* Styles to apply when hovering */
-    border: 1px solid #001aff; /* Change border color, for example */
-    transform: scale(1.55); /* Increase the image size slightly */
-    /* Add any other styles you want for the hover state */
-  }
+/* ── PRODUCT GRID ── */
+.product-grid {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 3rem 2rem 5rem;
+}
+.product-grid-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--border);
+}
+.product-grid-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 4rem);
+  letter-spacing: 0.04em;
+}
+.product-count {
+  font-size: 0.75rem;
+  color: var(--muted);
+  letter-spacing: 0.1em;
+}
 
-  
+.product-grid-items {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5px;
+}
+
+.product-card {
+  background: var(--bg2);
+  overflow: hidden;
+  cursor: pointer;
+  display: block;
+  position: relative;
+}
+.product-card-img-wrap {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 1;
+  background: var(--bg3);
+}
+.product-card-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.3s;
+  opacity: 0.88;
+}
+.product-card:hover .product-card-img-wrap img {
+  transform: scale(1.06);
+  opacity: 1;
+}
+.product-card-overlay {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 1rem;
+  background: linear-gradient(to top, rgba(0,0,0,0.65) 0%, transparent 100%);
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+.product-card:hover .product-card-overlay {
+  transform: translateY(0);
+}
+.product-card-overlay span {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #fff;
+}
+.product-card-info {
+  padding: 0.85rem 0.75rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.product-card-name {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--text);
+  letter-spacing: 0.04em;
+}
+.product-card-price {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+@media (max-width: 1024px) {
+  .product-grid-items { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 640px) {
+  .product-grid-items { grid-template-columns: repeat(2, 1fr); gap: 1px; }
+  .product-grid { padding: 2rem 1rem 3rem; }
+}

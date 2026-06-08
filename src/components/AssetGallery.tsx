@@ -1,4 +1,6 @@
-
+import React from 'react';
+import { Link } from 'react-router-dom';
+import './AssetGallery.css';
 
 import bb1 from '../assets/bb/bb1.png';
 import bb2 from '../assets/bb/bb2.png';
@@ -21,39 +23,52 @@ import bb18 from '../assets/bb/bb18.png';
 import bb19 from '../assets/bb/bb19.png';
 import bb20 from '../assets/bb/bb20.png';
 
-import React from 'react';
-import { Link } from 'react-router-dom';
-import './AssetGallery.css';
+const products = [
+  { img: bb1,  name: 'Deck 8.0"',         price: '₪249' },
+  { img: bb2,  name: 'Deck 8.25"',        price: '₪249' },
+  { img: bb3,  name: 'Complete Setup',    price: '₪649' },
+  { img: bb4,  name: 'Trucks 149mm',      price: '₪189' },
+  { img: bb5,  name: 'Wheels 52mm',       price: '₪129' },
+  { img: bb6,  name: 'Bearings ABEC-7',   price: '₪69'  },
+  { img: bb7,  name: 'Griptape',          price: '₪39'  },
+  { img: bb8,  name: 'Skate Tee',         price: '₪149' },
+  { img: bb9,  name: 'Logo Hoodie',       price: '₪299' },
+  { img: bb10, name: 'Camp Cap',          price: '₪119' },
+  { img: bb11, name: 'Cargo Pants',       price: '₪349' },
+  { img: bb12, name: 'Skate Socks 3-pk',  price: '₪69'  },
+  { img: bb13, name: 'Backpack',          price: '₪399' },
+  { img: bb14, name: 'Tool Kit',          price: '₪89'  },
+  { img: bb15, name: 'Skate Shoes',       price: '₪549' },
+  { img: bb16, name: 'Knee Pads',         price: '₪149' },
+  { img: bb17, name: 'Wax Block',         price: '₪29'  },
+  { img: bb18, name: 'Sticker Pack',      price: '₪35'  },
+  { img: bb19, name: 'Risers',            price: '₪29'  },
+  { img: bb20, name: 'Hardware Set',      price: '₪25'  },
+];
 
-
-interface AssetGalleryProps {
-  // Add any props if needed
-}
-
-const AssetGallery: React.FC<AssetGalleryProps> = () => {
-  const imagesArray = [
-    bb1, bb2, bb3, bb4, bb5, bb6, bb7, bb8, bb9, bb10,
-    bb11, bb12, bb13, bb14, bb15, bb16, bb17, bb18, bb19, bb20
-  ];
-
-  return (
-    <div className=' 'style={{ maxWidth: '100%', overflowX: 'hidden' }}>
-      {imagesArray.map((image, index) => (
-        <Link to={`/item-details/${index}`} key={index}>
-          <img
-            style={{
-              width: '20rem',
-              height: '20rem',
-              transition: 'background-color 0.4s ease',
-            }}
-            src={image}
-            alt={`Image ${index}`}
-            className="hoverable-image"
-          />
+const AssetGallery: React.FC = () => (
+  <div className="product-grid" style={{ paddingTop: '80px' }}>
+    <div className="product-grid-header">
+      <h2 className="product-grid-title">Collections</h2>
+      <span className="product-count">{products.length} items</span>
+    </div>
+    <div className="product-grid-items">
+      {products.map((p, i) => (
+        <Link to={`/item-details/${i}`} key={i} className="product-card">
+          <div className="product-card-img-wrap">
+            <img src={p.img} alt={p.name} />
+            <div className="product-card-overlay">
+              <span>Quick View</span>
+            </div>
+          </div>
+          <div className="product-card-info">
+            <span className="product-card-name">{p.name}</span>
+            <span className="product-card-price">{p.price}</span>
+          </div>
         </Link>
       ))}
     </div>
-  );
-}
+  </div>
+);
 
 export default AssetGallery;
