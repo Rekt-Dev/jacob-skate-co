@@ -1,8 +1,0 @@
- cart : add state for price sum in cart    
- internal header - diff logo for collections page and all internal browsing
-user login - add crypto library and all realted pre reqs
-consider using AI systems for letting users "try on" from their keyboards
-search - build the search environment
-disclaimer - add
-FAQ - add
-Contact us - build page 
