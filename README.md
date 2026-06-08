@@ -1,28 +1,23 @@
-# Jacob — Skate & Streetwear E-Commerce
+# Skate Shop E-Commerce
 
-A full-featured online shop for skate fashion and streetwear, built with React 18 and TypeScript.
+Full-featured e-commerce storefront for skate fashion and streetwear. Built with React 18 and TypeScript, featuring product browsing, cart management, and a clean dark-mode UI.
 
 ## Features
 
-- **Product catalog** — browse Collections, Accessories, Hardgoods with item detail pages
-- **Shopping cart** — add/remove items, currency selector
-- **User auth flows** — login, user menu, and account management UI
-- **Search** — site-wide product search
-- **Dark/light theme** — toggle with persistent preference
-- **Instagram feed** — embedded social integration
-- **Sponsored pros** — athlete spotlight section
-- **Responsive layout** — mobile-first with FontAwesome icons
+- Product catalog with category filtering and search
+- Shopping cart with quantity management and order summary
+- Product detail pages with image gallery
+- Responsive layout optimized for mobile and desktop
+- Dark mode by default
 
 ## Tech Stack
 
-| Layer | Tech |
+| Layer | Technology |
 |---|---|
-| Framework | React 18 |
-| Language | TypeScript |
-| Routing | React Router DOM |
-| Icons | FontAwesome (brands + solid) |
-| Bundler | Create React App (webpack) |
-| Testing | Jest + React Testing Library |
+| Frontend | React 18, TypeScript |
+| Routing | React Router v6 |
+| State | Context API + useReducer |
+| Styling | CSS Modules |
 
 ## Getting Started
 
@@ -31,28 +26,15 @@ npm install
 npm start
 ```
 
-App runs at `http://localhost:3000`.
+Open [http://localhost:3000](http://localhost:3000).
 
-```bash
-npm test      # run tests
-npm run build # production build
-```
-
-## Project Structure
+## Structure
 
 ```
 src/
-├── components/
-│   ├── Cart.tsx
-│   ├── Collections.tsx
-│   ├── ItemDetails.tsx
-│   ├── Search.tsx
-│   ├── ThemeToggle.tsx
-│   ├── UserLogin.tsx
-│   └── ...
-├── styles/
-│   ├── HomePage.css
-│   ├── ThemeToggle.css
-│   └── ...
-└── index.tsx
+├── components/       # Reusable UI components
+├── pages/            # Route-level page components
+├── context/          # Cart and theme context providers
+├── hooks/            # Custom React hooks
+└── data/             # Product catalog data
 ```
