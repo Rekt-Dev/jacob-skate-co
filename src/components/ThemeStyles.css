@@ -35,7 +35,7 @@
   height: 72px;
   width: auto;
   object-fit: contain;
-  filter: invert(1);
+  filter: invert(1) sepia(1) saturate(6) hue-rotate(320deg);
   mix-blend-mode: screen;
   transition: opacity 0.2s;
 }

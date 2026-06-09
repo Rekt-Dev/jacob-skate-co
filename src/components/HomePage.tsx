@@ -8,23 +8,22 @@ import c from '../assets/c.jpg';
 import d from '../assets/d.jpg';
 import e from '../assets/e.jpg';
 import f from '../assets/f.jpg';
-import g from '../assets/g.png';
-import h from '../assets/h.png';
-import fallbackImage from '../assets/fallback.jpg';
+import sk1 from '../assets/sk1.jpg';
+import sk2 from '../assets/sk2.jpg';
 
 interface HomePageProps {
   onClickCallback: () => void;
 }
 
 const slides = [
-  { img: a, label: 'New Drop', sub: 'SS25 Collection' },
-  { img: b, label: 'Hardgoods', sub: 'Decks · Trucks · Wheels' },
-  { img: c, label: 'Apparel', sub: 'Jacob Brand Cuts' },
-  { img: d, label: 'Accessories', sub: 'Bags · Caps · Gear' },
-  { img: e, label: 'Riders', sub: 'Meet the Team' },
-  { img: f, label: 'Limited', sub: 'Drop Series' },
-  { img: g, label: 'Shop Now', sub: 'Free shipping over ₪200' },
-  { img: h, label: 'Lookbook', sub: 'SS25 Editorial' },
+  { img: sk2, label: 'New Drop', sub: 'SS25 Collection' },
+  { img: a,   label: 'Lookbook', sub: 'SS25 Editorial' },
+  { img: c,   label: 'Apparel', sub: 'Jacob Brand Cuts' },
+  { img: b,   label: 'Street', sub: 'Out Now' },
+  { img: sk1, label: 'Hardgoods', sub: 'Decks · Trucks · Wheels' },
+  { img: d,   label: 'Team', sub: 'Meet the Riders' },
+  { img: e,   label: 'Archive', sub: 'Classics Revisited' },
+  { img: f,   label: 'Limited', sub: 'Drop Series' },
 ];
 
 const INTERVAL = 4500;
@@ -51,11 +50,7 @@ const HomePage: React.FC<HomePageProps> = () => {
     <div className="hero" onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)}>
       {slides.map((slide, i) => (
         <div key={i} className={`hero-slide ${i === current ? 'active' : ''}`}>
-          <img
-            src={slide.img}
-            alt={slide.label}
-            onError={ev => { (ev.target as HTMLImageElement).src = fallbackImage; }}
-          />
+          <img src={slide.img} alt={slide.label} />
           <div className="hero-overlay" />
         </div>
       ))}
